@@ -1,9 +1,23 @@
+import math
+
 #Game settings
 WIDTH = 1200
 HEIGHT = 800
-HALF_WIDTH = WIDTH / 2
-HALF_HEIGHT = HEIGHT / 2
+HALF_WIDTH = WIDTH // 2
+HALF_HEIGHT = HEIGHT // 2
 FPS = 60
+TILE = 100
+FPS_POS = (WIDTH - 65, 5)
+
+#Raycasting Settings
+FOV = math.pi / 3
+HALF_FOV = FOV / 2
+NUM_RAYS = 30
+MAX_DEPTH = 800
+DELTA_ANGLE = FOV / NUM_RAYS
+DISTANCE = NUM_RAYS / (2 * math.tan(HALF_FOV))
+PROJECTION_COEFFICIENT = 3 * DISTANCE * TILE
+SCALE = WIDTH // NUM_RAYS
 
 #Player Settings
 player_position = (HALF_WIDTH, HALF_HEIGHT)
